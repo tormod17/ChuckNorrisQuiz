@@ -68,7 +68,7 @@ footer {color:orange;
 					  width:80%;	
 					  height:auto;
 					}
-
+.selected {color:red;}
 
 #questionBar { 	display: block;
 				position:relative;

@@ -3,7 +3,7 @@ $(document).ready(function(){
 var currentQuestion =  0 ;//qna.indexOf(qna[0])
 var questionNumber = 1;
 var tOf= 1;
-var booleanAnswer=false;
+var booleanAnswer;
 	
 	 		  	
 	$('#restartQuiz').click(function() {
@@ -12,40 +12,28 @@ var booleanAnswer=false;
 			$('.fistWrapper img').remove();
 			
 			$('#questionBar').text('Q '+ questionNumber + ': ' + qna[currentQuestion].question);
-			for ( var i=1; i < 4; i++) {
-				$('#ans'+ i).text(qna[currentQuestion].answers[i-1][0]);
-			};		
+				for ( var i=1; i < 4; i++) {
+					$('#ans'+ i).text(qna[currentQuestion].answers[i-1][0]);
+					
+					$('#ans'+ i).click(function(){
+						var j= $(this).attr('id');
+						var h= parseInt(j);
+						console.log(parseInt(j));
+						/*booleanAnswer = qna[currentQuestion].answers[][tOf];  
+						alert(booleanAnswer);	
+						booleanChecker();
+						nextQuestion();*/
+					});
+					//$('#ans'+ i). click(onClickCheckAnswer);
+					//$('#ans').add(ordinal : i );
+				}	
     }); 
 
 
-	$('#ans1').click(function() {
 		
-			var booleanAnswer = qna[currentQuestion].answers[0][tOf];  
-			alert(booleanAnswer);	
-			if (booleanAnswer == true ) {
-				$('.fistWrapper').append('<img src="http://i1378.photobucket.com/albums/ah112/Tormod_Smith/fist_zpsmhwxvwuk.jpg">')
-			}
-			//booleanChecker();
-			nextQuestion();
-	});
-	$('#ans2').click(function() {
-			var booleanAnswer = qna[currentQuestion].answers[1][tOf];  
-			alert(booleanAnswer);
-			if (booleanAnswer == true ) {
-				$('.fistWrapper').append('<img src="http://i1378.photobucket.com/albums/ah112/Tormod_Smith/fist_zpsmhwxvwuk.jpg">')
-			}
-			//booleanChecker();
-			nextQuestion();
-	});
-	$('#ans3').click(function() {
-			var booleanAnswer = qna[currentQuestion].answers[2][tOf];  	
-			alert(booleanAnswer);
-			if (booleanAnswer == true ) {
-				$('.fistWrapper').append('<img src="http://i1378.photobucket.com/albums/ah112/Tormod_Smith/fist_zpsmhwxvwuk.jpg">')
-			}
-			//booleanChecker();
-			nextQuestion();
-	});
+	
+	
+    
 
 	function nextQuestion () {
 	currentQuestion+=1;
@@ -55,11 +43,12 @@ var booleanAnswer=false;
 			$('#ans'+ i).text(qna[currentQuestion].answers[i-1][0]);
 		}
 	}
-	/*function booleanChecker(){
+	function booleanChecker(){
 		if (booleanAnswer == true ) {
 			$('.fistWrapper').append('<img src="http://i1378.photobucket.com/albums/ah112/Tormod_Smith/fist_zpsmhwxvwuk.jpg">')
+			
 		}
-	};*/
+	};
 			
 					
 					
