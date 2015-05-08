@@ -1,63 +1,82 @@
 $(document).ready(function(){
 
-var currentQuestion =  0 ;//qna.indexOf(qna[0])
-var questionNumber = 1;
-var tOf= 1;
-var booleanAnswer;
-var answerNumber;
+	var currentQuestion =  0 ;//qna.indexOf(qna[0])
+	var questionNumber = 1;
+	var tOf= 1;
+	var booleanAnswer;
+	var answerNumber;
 	
 	 		  	
-	$('#restartQuiz').click(function() {
-			currentQuestion =0;
-			questionNumber= 1;
-			answerNumber=0;
-
-			$('.fistWrapper img').remove();
-			
-			$('#questionBar').text('Q '+ questionNumber + ': ' + qna[currentQuestion].question);
-				
-				for ( var i=1; i < 4; i++) {
-					$('#ans'+ i).text(qna[currentQuestion].answers[i-1][0]);
-					
-
+		$('#restartQuiz').click(function() {
+				currentQuestion =0;
+				questionNumber= 1;
+				answerNumber=0;
+				$('.fistWrapper img').remove();
+				$('#questionBar').text('Q '+ questionNumber + ': ' + qna[currentQuestion].question);
+			for ( var i=1; i < 4; i++) {
+				$('#ans'+ i).text(qna[currentQuestion].answers[i-1][0]);
 			}	
-		
-    
-    }); 
-
-
-	answerChecker ();
-	
-	function answerChecker(){
+		}); 
 
 		for ( var i=1; i < 4; i++){
-			$('#ans'+i).click(function(){
+			$('#ans'+i).click(clickEventHandler);
+		}
+
+		$('#help').click(function(){
+			$('#helpSheet').show(300);
+
+		});
+
+		$('#popupContinueButton').click(function(){
+			$('#Popup').hide(300);
+			
+		});	
+
+		$('#helpContinueButton').click(function(){
+			$('#helpSheet').hide(300);
+		});
+	
+		
+			
+
+	function clickEventHandler() {
 		
 				answerNumber = $(this).attr('id');
 				answerNumber=parseInt(answerNumber[3])
 				console.log (answerNumber);
-
+				
 				if ( qna[currentQuestion].answers[answerNumber-1][tOf] == true ) {
-						alert('right answer');
-						$('.fistWrapper').append('<img src="http://i1378.photobucket.com/albums/ah112/Tormod_Smith/fist_zpsmhwxvwuk.jpg">')
-				} else { alert('wrong')};
+						
+					
+						$('.responseImg').addClass("rightAnswer");
+						$('.wrongTxt').hide();
+						$('.rightTxt').show(500);
+						$('#Popup').show(300);///css({"display":'inline-block'});
+						$('.fistWrapper').append('<img src="http://i1378.photobucket.com/albums/ah112/Tormod_Smith/fist_zpsmhwxvwuk.jpg">');
+						
+				} else { 
 
+
+						$('.responseImg').addClass("wrongAnswer");
+						$('.rightTxt').hide();						
+						$('.wrongTxt').show(500);
+						$('#Popup').show(300);///css({"display":'inline-block'});
+						
+			
+				};
 					currentQuestion+=1;
 					questionNumber+=1;
-	
-				$('#questionBar').text('Q '+ questionNumber + ': ' + qna[currentQuestion].question);
+						$('#questionBar').text('Q '+ questionNumber + ': ' + qna[currentQuestion].question);
+				
 				for ( i=1; i<4; i++)	{
-					$('#ans' + i).text(qna[currentQuestion].answers[i-1][0]);
+						$('#ans' + i).text(qna[currentQuestion].answers[i-1][0]);
 				};	
 	 	
-	 		});
-		}
-	};
+	 }		
+	
 
-					
-			
+
 });
-
 
 
 var qna = [ { 

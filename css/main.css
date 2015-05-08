@@ -5,13 +5,19 @@
   box-sizing: border-box;
 }
 
+html,body,#page, header { height:100%;}
+
+#page { position:relative;}
+#content { padding-bottom:130px;} /* FOOTER HEIGHT */
 
 
- html{background-image:url(http://i1378.photobucket.com/albums/ah112/Tormod_Smith/chuckKarate_zpsvg231zck.jpg);
+
+ body {background-image:url(http://i1378.photobucket.com/albums/ah112/Tormod_Smith/chuckKarate_zpsvg231zck.jpg);
 	  background-repeat:no-repeat;
 	  background-position: center;
 	  background-size: cover;
-	  font-family:'Abril Fatface'
+	  font-family:'Abril Fatface';
+	  clear:both;
 	 }
 
 h2 { font-size: 3em;
@@ -29,7 +35,9 @@ header { vertical-align: top;
 		 height:5em;
 		 display:block;
 		}
-section {width:90%;}
+section {width:100%;
+		
+		}
 
 footer {color:orange;
 		text-align: center;}		
@@ -54,6 +62,7 @@ footer {color:orange;
 					 border:solid orange;
 					 text-align: center;
 					}	
+
 .qna { width:60%;
 	   display: inline-block;
 	   position: relative;
@@ -62,13 +71,9 @@ footer {color:orange;
 	   padding-left: 10em;
 	   font-family:'Roboto';
 	}
-#ans1, #ans2, #ans3 { background-color: #2a2a2a;
-					  border-radius: 15px;
-					  border: solid #2a2a2a;
-					  width:80%;	
-					  height:auto;
-					}
-.selected {color:red;}
+/* ans1, #ans2, #ans3 {  */
+					
+.selected {background-color:green;}
 
 #questionBar { 	display: block;
 				position:relative;
@@ -83,7 +88,7 @@ footer {color:orange;
 				width: 70%;
 				}			 			 
 
-#answerList { 	display: block;
+.answerList { 	display: block;
 				position:relative;
 				background: black;
 				border-radius: 15px;
@@ -94,9 +99,88 @@ footer {color:orange;
 				vertical-align: top;
 			}
 
-#answerList li { margin: 2em 1em;
+
+.answerList button { margin: 2em 1em;
 				 font-size:1.5em;
-				 color:orange;}		
+				 color:orange;
+				background-color: #2a2a2a;
+				border-radius: 15px;
+				border: solid #2a2a2a;
+				 width:80%;	
+				height:auto;}	
+
+#Popup { 	   background-color: black;
+			   display:none;
+			   position: absolute;
+			   float:right;
+			   width:30em;
+			   height:22em;
+			   padding: 1em;
+			   margin-top: 1em;
+			   margin-left: 5em;
+			   border-radius: 15px;
+			   border-color: orange;
+			   border-style: solid;
+			   font-size: 2em;
+			   z-index: 1;
+			}
+#helpSheet {   color: orange;
+			   background-color: black;
+			   display:none;
+			   position: absolute;
+			   float:right;
+			   width:30em;
+			   height:20em;
+			   padding:1em;
+			   margin:5em 20em 0em 20em;
+			   border-radius: 15px;
+			   border-color: orange;
+			   border-style: solid;
+			   z-index: 1;
+			   font-size: 2em;
+			   text-align: center;
+			}
+
+.button{ 			width:auto;
+					float:center;
+					margin: 2em 0em;
+					border-radius: 15px;
+					color:orange;
+					background-color:#2a2a2a; 
+				 }		
+
+.responses{ list-style: none;
+			color:orange;
+			text-align: center;}			
+
+.rightAnswer {	background-image: url('../img/chuckFlying.gif'); 
+				background-repeat: no-repeat;
+				background-position:top;
+				text-align: center;
+				margin: 2em;
+				height:8em;
+				color: orange;
+			}	
+
+.rightTxt  { display: none;
+			 color:green;
+			}	
+
+
+.wrongAnswer {	background-image: url('../img/pow.png'); 
+				background-repeat: no-repeat;
+				background-position:top;
+				text-align: center;
+				margin: 2em;
+				padding:2em;
+				height:10em;
+				
+			}			
+.wrongTxt { 	display: none;
+				color: red;
+	  	  }			
+			
+
 
 .fistWrapper { width:70%;			
 			 }			
