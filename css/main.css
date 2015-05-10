@@ -143,43 +143,41 @@ footer {color:orange;
 
 .button{ 			width:auto;
 					float:center;
-					margin: 2em 0em;
+					margin: 0 auto;
 					border-radius: 15px;
 					color:orange;
 					background-color:#2a2a2a; 
-				 }		
+				 }	
+
+#popupContinueButton {  display:block;
+						position: relative;
+						float:center;
+						text-align: center;
+
+					 }
 
 .responses{ list-style: none;
 			color:orange;
 			text-align: center;}			
 
-.rightAnswer {	background-image: url('../img/chuckFlying.gif'); 
-				background-repeat: no-repeat;
-				background-position:top;
-				text-align: center;
-				margin: 2em;
-				height:8em;
-				color: orange;
-			}	
-
-.rightTxt  { display: none;
+ .rightTxt  { display: none;
 			 color:green;
+		/* 	 background-image: url('../img/chuckFlying.gif'); 
+		background-repeat: no-repeat;
+		background-position:top; */
+			 text-align: center;
 			}	
-
-
-.wrongAnswer {	background-image: url('../img/pow.png'); 
+.wrongTxt { 	display: none;
+				color: red;
+				/* background-image: url('../img/pow.png'); 
 				background-repeat: no-repeat;
-				background-position:top;
+				background-position:top; */
 				text-align: center;
 				margin: 2em;
 				padding:2em;
 				height:10em;
-				
-			}			
-.wrongTxt { 	display: none;
-				color: red;
 	  	  }			
-			
+			 
 
 
 .fistWrapper { width:70%;			
@@ -189,6 +187,25 @@ footer {color:orange;
 				   border-radius: 25px;
 				   margin:0.5em;
 				   }
+
+#szlider{   width:100%;
+		    height:15px;
+		    border:1px solid #000;
+		    border-radius: 15px;
+		    overflow:hidden; }
+#szliderbar{ width:0%;
+		    height:15px;
+		    border-right: 1px solid #000000;
+		    background: orange }
+
+#szazalek {	width: 100%;
+		    color: #000000;
+		    font-size: 15px;
+		    font-style: italic;
+		    font-weight: bold;
+		    left: 25px;
+		    position: relative;
+		    top: -16px; }
 
 input[type='checkbox'] {
     -webkit-appearance:none;
@@ -206,3 +223,6 @@ input[type='checkbox'] {
     src: url("../animeace2bb_ot/animeace2_reg.otf");
 }   
 
+footer { clear: both;
+		 height:auto;
+		}
